@@ -2,24 +2,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Formation {
-    private Map<Matiere,Integer> forma;
+    private Map<Matiere,Integer> formation;
     private int id;
 
     public Formation(int id){
         this.id = id;
-        this.forma = new HashMap<>();
+        this.formation = new HashMap<>();
     }
 
     public void Ajouter(Matiere matiere, int coeff){
-        this.forma.put(matiere,coeff);
+        this.formation.put(matiere,coeff);
     }
 
     public void Supprimer(Matiere matiere){
-        this.forma.remove(matiere);
+        this.formation.remove(matiere);
+    }
+
+    public boolean contientMatiere(Matiere matiere){
+        return this.formation.containsKey(matiere);
     }
 
     public int getCoeff(Matiere matiere){
-        Object coeff = this.forma.get(matiere);
+        Object coeff = this.formation.get(matiere);
         if(coeff == null){
             return -1;
         }else{
@@ -30,7 +34,7 @@ public class Formation {
     @Override
     public String toString() {
         String resultat = "Formation id "+this.id+"\n";
-        for(Matiere matiere : this.forma.keySet()){
+        for(Matiere matiere : this.formation.keySet()){
             resultat += matiere.getNom()+" : "+getCoeff(matiere)+"\n";
         }
         return resultat;
