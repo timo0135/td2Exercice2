@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Etudiant {
+public class Etudiant implements Comparable<Etudiant>{
 
 	private Map<Matiere,Double> notes;
 	private Identite identite;
@@ -58,6 +58,8 @@ public class Etudiant {
 		return somme/nbmatiere;
 	}
 
+
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -70,4 +72,14 @@ public class Etudiant {
 	public int hashCode() {
 		return Objects.hash(identite);
 	}
+
+	@Override
+	public int compareTo(Etudiant o) {
+		if(o.getIdentite().getNom().compareTo(this.identite.getNom())==0){
+			return -o.getIdentite().getPrenom().compareTo(this.identite.getPrenom());
+		}else{
+			return -o.getIdentite().getNom().compareTo(this.identite.getNom());
+		}
+	}
+
 }
