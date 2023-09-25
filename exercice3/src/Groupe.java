@@ -1,11 +1,8 @@
 import java.util.*;
 
-public class Groupe{
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
-public class Groupe {
+public class Groupe{
+
 
     List<Etudiant> classe = new ArrayList<>();
     Formation formation;
