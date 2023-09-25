@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class Etudiant {
 
@@ -55,5 +56,18 @@ public class Etudiant {
 		}
 		// retourner la moyenne
 		return somme/nbmatiere;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Etudiant etudiant = (Etudiant) o;
+		return Objects.equals(identite, etudiant.identite);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(identite);
 	}
 }

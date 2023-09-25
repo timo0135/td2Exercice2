@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Formation {
     private Map<Matiere,Integer> formation;
@@ -50,5 +51,18 @@ public class Formation {
         }
         // retourner le resultat
         return resultat;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Formation formation = (Formation) o;
+        return id == formation.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
