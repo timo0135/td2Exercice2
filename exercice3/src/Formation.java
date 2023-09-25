@@ -42,7 +42,7 @@ public class Formation {
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         String resultat = "Formation id "+this.id+"\n";
         // parcourir les matieres de la formation
         for(Matiere matiere : this.formation.keySet()){
