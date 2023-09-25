@@ -1,0 +1,36 @@
+@startuml
+
+class Identite{
+- String final NIP
+- String nom
+- String prenom
+}
+class Etudiant{
+- int resultats
+}
+
+
+
+class Formation{
+- int id
+}
+
+class Matiere{
+- String nom
+}
+
+class Groupe{
+
+}
+Groupe "1"-->"1" Formation : - formation
+
+Groupe "1"-->"*" Etudiant : - classe
+HashMap --|> SetMap
+Etudiant "1" --> "1" Identite : - identite
+Etudiant "1" --> "1" Formation : - formation
+Etudiant --> SetMap : - resultat
+Formation --> SetMap : - coeff
+
+
+
+@enduml
