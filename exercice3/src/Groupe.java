@@ -57,6 +57,16 @@ public class Groupe{
         });
     }
 
+    public void triParMerite(){
+        Collections.sort(this.classe, new Comparator<Etudiant>() {
+            @Override
+            public int compare(Etudiant o1, Etudiant o2) {
+                return (int) (o1.calculerMoyGen() - o2.calculerMoyGen());
+            }
+        });
+
+    }
+
     @Override
     public String toString() {
         String res = "Groupe :\n";

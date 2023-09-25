@@ -25,6 +25,18 @@ class GroupeTest {
         g1.compareAntiAlpha();
         System.out.println(g1);
     }
+
+	@Test
+	void triParMerite(){
+		Formation f1 = new Formation(4);
+		Groupe g1 = new Groupe(f1);
+		g1.ajouterEtudiant(new Etudiant(new Identite("test","jojo","lafriture"),f1));
+		g1.ajouterEtudiant(new Etudiant(new Identite("test2","jaja","labrinbelle"),f1));
+		g1.ajouterEtudiant(new Etudiant(new Identite("test3","jojo","labrinbelle"),f1));
+		g1.triParMerite();
+		System.out.println(g1);
+	}
+
 	@Test
 	void calculerMoyenneMatiere() {
 		// test de la méthode calculerMoyenneMatiere
